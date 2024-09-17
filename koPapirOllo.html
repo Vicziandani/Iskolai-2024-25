@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>koPapirOllo</title>
+</head>
+<body>
+    <h1 id="asd"></h1>
+    <script>
+        function Véletlenszam(max){
+            return Math.floor(Math.random() * max);
+        }
+
+        function jatek() {
+            if (bekeres != Kő || bekeres != Papír || bekeres != Olló){
+            alert("Nem opció sajnos a megadott cuccosod")
+        }else{
+            let azenyem = ["Kő", "Papír", "Olló"];
+            let gepszam = Véletlenszam(3);
+
+            if(azenyem[gepszam] == "Kő" && bekeres == "Papír"){
+                alert("Nyertél");
+            }else if(azenyem[gepszam] == "Kő" && bekeres == "Olló"){
+                alert("Sajnos bukta");
+            }else if(azenyem[gepszam] == "Kő" && bekeres == "Kő"){
+                alert("Döntetlen");
+            } else if(azenyem[gepszam] == "Papír" && bekeres == "Kő"){
+                alert("Sajnos bukta")
+            }else if(azenyem[gepszam] == "Papír" && bekeres == "Papír"){
+                alert("Döntetlen")
+            }else if(azenyem[gepszam] == "Papír" && bekeres == "Olló"){
+                alert("Nyertél");
+            }
+            else if(azenyem[gepszam] == "Olló" && bekeres == "Kő"){
+                alert("Sajnos bukta")
+            }else if(azenyem[gepszam] == "Olló" && bekeres == "Papír"){
+                alert("Nyertél")
+            }else if(azenyem[gepszam] == "Olló" && bekeres == "Olló"){
+                alert("Döntetlen");
+            }
+        }
+        }
+
+        let bekeres = prompt("Melyiket választod? (Kő, Papír, Olló)").toLowerCase();
+    </script>
+</body>
+</html>

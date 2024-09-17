@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="kiiras"></h1>
+    <script>
+        let gyurukUra = {
+                cim: "Gyűrűk Ura",
+                szerzo: "Tolkein",
+                megjelenesEve: 1996,
+                elerheto: true,
+                kolcsonzoNeve: undefined,
+
+                kikolcsonzes : function(kolcsonzo){
+                    if(this.elerheto){
+                        this.kolcsonzoNeve = kolcsonzo;
+                        this.elerheto = false;
+                        return `A ${this.cim} kikölcsönözve ${this.kolcsonzoNeve} által`;
+                    }else{
+                        return "A könyv nem érhető el jelenleg";
+                    }
+                },
+
+                visszahozas : function(){
+                    this.kolcsonzoNeve = undefined;
+                    this.elerheto = true;
+                },
+
+                informacio : function(){
+                    elerhetoseg = "";
+                    if (this.elerheto == true){
+                        elerhetoseg = "elérhető";
+                    }else{
+                        elerhetoseg = "Nem elérhető";
+                    }
+                    return `A könyv címe: ${this.cim},  szerzője: ${this.szerzo}, a megjelenés éve: ${this.megjelenesEve}, elérhetőség: ${elerhetoseg}, a kölcsönző neve: ${this.kolcsonzoNeve} `;
+                } 
+        }
+
+        document.getElementById("kiiras").innerHTML = gyurukUra.informacio();
+    </script>
+</body>
+</html>

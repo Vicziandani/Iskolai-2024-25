@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>maganhangzo</title>
+</head>
+
+<body>
+    <h1 id="asd1"></h1>
+    <h1 id="asd2"></h1>
+    <h1 id="asd3"></h1>
+    <h1 id="asd4"></h1>
+    <h1 id="asd5"></h1>
+
+    <script>
+        let betuSzamlalo = {
+            a: 0,
+            á: 0,
+            e: 0,
+            é: 0,
+            i: 0,
+            í: 0,
+            o: 0,
+            ó: 0,
+            ö: 0,
+            ő: 0,
+            u: 0,
+            ú: 0,
+            ü: 0,
+            ű: 0,
+
+            //promptBetuk megy be
+            kiszamol : function(asd){
+                for (let i = 0; i < asd.length; i++) {
+                    if(asd[i] == 'a'){
+                        this.a ++;
+                    }else if(asd[i] == 'á'){
+                        this.á ++;
+                    }else if(asd[i] == 'e'){
+                        this.e ++;
+                    }else if(asd[i] == 'é'){
+                        this.é ++;
+                    }else if(asd[i] == 'i'){
+                        this.i ++;
+                    }else if(asd[i] == 'í'){
+                        this.í ++;
+                    }else if(asd[i] == 'o'){
+                        this.o ++;
+                    }else if(asd[i] == 'ó'){
+                        this.ó ++;
+                    }else if(asd[i] == 'ö'){
+                        this.ö ++;
+                    }else if(asd[i] == 'ő'){
+                        this.ő ++;
+                    }else if(asd[i] == 'u'){
+                        this.u ++;
+                    }else if(asd[i] == 'ú'){
+                        this.ú ++;
+                    }else if(asd[i] == 'ü'){
+                        this.ü ++;
+                    }else if(asd[i] == 'ű'){
+                        this.ű ++;
+                    }
+                }
+
+                console.log("a:" + this.a)
+                console.log("á:" +this.á)
+                console.log("e:" +this.e)
+                console.log("é:" +this.é)
+                console.log("i:" +this.i)
+                console.log("í:" +this.í)
+                console.log("o:" +this.o)
+                console.log("ó:" +this.ó)
+                console.log("ö:" +this.ö)
+                console.log("ő:" +this.ő)
+                console.log("u:" +this.u)
+                console.log("ú:" +this.ú)
+                console.log("ü:" +this.ü)
+                console.log("ű:" +this.ű)
+            }
+        }
+
+        let maganhangozok = ['a', 'á', 'e', 'é', 'i', 'í', 'o', 'ó', 'ö', 'ő', 'u', 'ú', 'ü', 'ű'];
+        let bemenet = prompt("Jöhet a rizsa");
+
+        let kezeltBemenet = bemenet.toLowerCase();
+        let promptBetuk = []
+        for (let i = 0; i < kezeltBemenet.length; i++) {
+            promptBetuk.push(kezeltBemenet[i]);
+        }
+
+        let szamlalo = 0;
+        for (let i = 0; i < promptBetuk.length; i++) {
+            if (maganhangozok.includes(promptBetuk[i])) {
+                szamlalo++;
+            };
+        }
+
+        betuSzamlalo.kiszamol(promptBetuk);
+
+
+
+        document.getElementById("asd1").innerHTML = szamlalo;
+    </script>
+</body>
+
+</html>

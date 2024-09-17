@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Szövegmanipuláció</title>
+</head>
+<body>
+    <h1 id="bemutatkozas"></h1>
+    <h1 id="levag"></h1>
+    <h1 id="darabol"></h1>
+    <h1 id="elsokarakter"></h1>
+    <script>
+        let bemutatkozas = prompt("Kérlek mutatkozz be röviden: (Név, Kor, Suli?)");
+
+        document.getElementById("bemutatkozas").innerHTML = bemutatkozas;
+
+        if (bemutatkozas.includes("Nemes")){
+            alert("gszis az illető")
+        }
+
+        let eredmeny = bemutatkozas.slice(0, bemutatkozas.length-5);
+
+        document.getElementById("levag").innerHTML = eredmeny;
+
+        let alap = [];
+
+        tomb = bemutatkozas.split(' ');
+
+        let osztriga = "";
+        tomb.forEach(element => {
+            osztriga += element + "<br>"
+        });
+        document.getElementById("darabol").innerHTML = osztriga;
+
+        document.getElementById("elsokarakter").innerHTML = bemutatkozas.substring(0,1);
+    </script>
+</body>
+</html>

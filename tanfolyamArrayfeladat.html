@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="asd1"></h1>
+    <h1 id="asd2"></h1>
+    <h1 id="asd3"></h1>
+    <h1 id="asd4"></h1>
+    <h1 id="asd5"></h1>
+    <h1 id="asd6"></h1>
+    <h1 id="asd7"></h1>
+    <h1 id="asd8"></h1>
+    <h1 id="asd9"></h1>
+    <h1 id="asd10"></h1>
+    <h1 id="asd11"></h1>
+    <script>
+        let tomb = ["Példa Péter", "Fájl Ferenc", "Metódus Mária", "Mező Mihály"];
+        
+        document.getElementById("asd1").innerHTML = tomb.sort();
+
+        tomb.push("Adat Anna");
+        document.getElementById("asd2").innerHTML = tomb; 
+
+        document.getElementById("asd3").innerHTML = "A tömb hossza: " + tomb.length;
+
+        document.getElementById("asd4").innerHTML = tomb.at(-2);
+
+        tomb.pop();
+        document.getElementById("asd5").innerHTML = tomb;
+
+
+        let utolag = ["Média Mónika", "Kiterjesztés Kitti", "Típus Tímea"];
+
+        tomb.push(utolag);
+        document.getElementById("asd6").innerHTML = tomb;
+
+        tomb.shift();
+
+        tomb.push("Objektum Ottó");
+        document.getElementById("asd7").innerHTML = tomb;
+        
+        tomb.reverse(";");
+        document.getElementById("asd8").innerHTML = tomb;
+
+        let Póló = {
+            meret : 88,
+            Szín : "Kék",
+
+
+            Méretváltás : function(meret){
+                if(this.meret < 84){
+                    alert("Nincs készleten ekkora póló");
+                }else if(this.meret >= 84 && this.meret <= 88){
+                    alert("XS");
+                }else if(this.meret >= 89 && this.meret <= 94){
+                    alert("S");
+                }else if(this.meret >= 95 && this.meret <= 100){
+                    alert("M");
+                }else if(this.meret >= 101 && this.meret <= 108){
+                    alert("L");
+                }else if(this.meret >= 109 && this.meret <= 116){
+                    alert("XL");
+                }else if(this.meret >= 117 && this.meret <= 124){
+                    alert("XXL");
+                }else{
+                    alert("Nincs készleten ekkora póló");
+                }
+            }
+        }
+        function functionKey(obj){
+            segedtomb = Object.Key(obj);
+            document.getElementById("asd10").innerHTML = segedtomb;
+            segedtomb2 = Object.values(obj);
+            document.getElementById("asd11").innerHTML = segedtomb2;
+            
+        }
+        document.getElementById("asd9").innerHTML = Póló.Méretváltás();
+    </script>
+</body>
+</html>
