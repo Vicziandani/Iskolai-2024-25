@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="car">
+    <h1 id="barbár"></h1>
+    <script>
+        let kiiras = document.getElementById("car");
+        //autó objektum literállal
+        let car = {
+            //mezők
+            name : "Fiat",
+            model : "500",
+            engine : {
+                horsepower: 110,
+                fuel : "benzin",
+            },
+
+
+            //metódusok
+            start : function(){
+                return "Autó elindult";
+            },
+
+            drive : function(){
+                return "Autó megy!";
+            },
+
+            kiir : function(){
+                kiiras.innerHTML = "Név: " + car.name + "<br>";
+                kiiras.innerHTML += "Megy az autó? " + car.drive() + "<br>";
+                kiiras.innerHTML += "Mennyi a lóereje? " + car.engine.horsepower + "<br>";
+                kiiras.innerHTML += car.carinfo();
+            },
+            
+            carinfo: function() {
+                return this.name + ", " + this.model;
+            }
+        }
+        car.kiir();
+        //autó objektum konstruktorral
+        let car2 = new Object();
+        car2.name = "Fiat";
+        car2.model = "500";
+        car2.start = function(){
+            return "autó elindult";
+        }
+        car2.drive = function(){
+            return "autó megy";
+        }
+
+        //tömbhasználat - létrehozás
+        let Tombnev = ["alma", "körte", "alma", "cseresznye", 1, 2];
+        let tombocske = new Array("alma", "körte", "alma", "cseresznye", 1, 2);
+        //elem lekérdezése
+        alert(Tombnev[0]);
+        alert(Tombnev[Tombnev.length - 1]);
+        Tombnev[2] = "megszencségteleníthetetlenség";
+        alert(Tombnev[2]);
+
+        //tömb bejárás
+        let kkiras = document.getElementById("barbár");
+        for (i = 0; i < Tombnev.length; i++) {
+            kkiras.innerHTML += Tombnev[i] + ", ";
+            
+        }
+    </script>
+</body>
+</html>

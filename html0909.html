@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="azonosito"></h1>
+    <h1 id="Osszeg"></h1>
+    <h1 id="Kulonbseg"></h1>
+    <h1 id="Szorzat"></h1>
+    <h1 id="Hanyados"></h1>
+    <h1 id="Modulo"></h1>
+    <h1 id="Osszegnyegyzet"></h1>
+
+    <script>
+        //1.Feladat
+        //let nev = prompt("Add meg a neved!");
+        //document.getElementById("azonosito").innerHTML = nev;
+
+
+        //2. Feladat
+        let szam1 = parseFloat(prompt("Add meg az első számot!"));
+        let szam2 = parseFloat(prompt("Add meg a második számot!"));
+
+        if(szam1 > szam2){
+            miertkellez(szam2, szam1)
+        }else{
+            miertkellez(szam1, szam2)
+        }
+
+        function miertkellez(num1, num2){
+            let inter = [];
+            while(num1 != num2+1){
+                inter.push(num1);
+                num1++;
+            }
+
+            let stringem ="";
+            let összeg = 0;
+            let hossz = 0;
+            for(let i = 0; i < inter.length; i++){
+                stringem = `${stringem}${inter[i]},`;
+                összeg += inter[i];
+                hossz = inter.length - 1;
+            }
+            document.getElementById("azonosito").innerHTML = stringem;
+            document.getElementById("Osszeg").innerHTML = összeg;
+            document.getElementById("Kulonbseg").innerHTML = hossz;
+        }
+        
+
+
+
+        //3.Feladat
+        /*if(isNaN(szam1) && isNaN(szam2)){
+            alert("Érvénytelen bemenet")
+        }else{
+            if(szam1 == 0 || szam2 == 0){
+                alert("Nem lehet nullával osztani")
+            }
+            else{
+                alertes(szam1,szam2)
+            }
+        }
+        
+        
+
+        function alertes(szami1, szami2){
+            let szamos1 = szami1.toFixed(2);
+            let szamos2 = szami1.toFixed(2);
+            let Osszeg = document.getElementById("Osszeg").innerHTML = szamos1 + szamos2;
+            let Kulonbseg = document.getElementById("Kulonbseg").innerHTML = szamos1 - szamos2;
+            let Szorzat = document.getElementById("Szorzat").innerHTML = szamos1 * szamos2;
+            let Hanyados = document.getElementById("Hanyados").innerHTML = szamos1 / szamos2;
+            let Modulo = document.getElementById("Modulo").innerHTML = szamos1 % szamos2;
+            let Osszegnyegyzet = document.getElementById("Osszegnyegyzet").innerHTML = Math.pow(szamos1,2) + Math.pow(szamos2,2);
+        }*/  
+    </script>
+</body>
+</html>

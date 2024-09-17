@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let ev = parseInt(prompt("Mond meg az évet: "));
+        function hello(ev){
+        if((ev % 4 == 0 && ev % 100 != 0) || ev % 400 == 0 ){
+            alert("szökőév");
+        }else{
+            alert("nem szököév");
+        }
+        }
+        
+        hello(ev);
+    </script>
+</body>
+</html>

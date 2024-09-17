@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ÁllatkertObjektum</title>
+</head>
+<body>
+    <h1 id="asd1"></h1>
+    <h1 id="asd2"></h1>
+    <h1 id="asd3"></h1>
+    <h1 id="asd5"></h1>
+    <h1 id="asd6"></h1>
+    <script>
+
+
+
+        let allat = {
+            fajta : "kaméleon",
+            szín : "változó",
+            kor : 32,
+            etelalergia : ["káposzta", "csiga", "csillámpóni"],
+            fiue : true,
+
+
+            eves : function(etel){
+                if (this.etelalergia.includes(etel)){
+                    return `A(z) ${this.fajta} nem eheti az alábbi ételt: ${etel}`;
+                }else{
+                    return `A(z) ${this.fajta} megeheti az alábbi ételt: ${etel}`;
+                }
+            },
+
+            informacio : function(){
+                return `A(z) ${this.fajta}, aki ${this.szín} színű, ${this.kor} éves, az alábbi ételekre allergiás: ${this.etelalergia}, és ${this.fiue ? "fiú" : "lány"} a neme.`;
+            },
+
+            alszik : function(ora){
+                if (ora < 0) {
+                    return `${this.fajta} nem tud negatív órát aludni`;
+                } else {
+                    if (this.kor <= 5) {
+                        if (ora >= 6 && ora <= 8) {
+                            return `A fiatal ${this.fajta} eleget aludt`;
+                        } else {
+                            return `A fiatal ${this.fajta} nem aludt eleget/túl sokat aludt`;
+                        }
+                    } else if (this.kor >= 5) {
+                        if (ora >= 8 && ora <= 10) {
+                            return `Az idős ${this.fajta} eleget aludt`;
+                        } else {
+                            return `Az idős ${this.fajta} nem aludt eleget/túl sokat aludt`;
+                        }
+                    }
+                }
+            },
+
+            allergiasra: function(allergia){
+                this.etelalergia.push(allergia);
+            },
+
+            kutyae : function(){
+                if(this.fajta == "kutya"){
+                    let ev = 7*this.kor;
+                    return `A kutya kora: ${ev}`;
+                }else{
+                    return `Az adott állat nem kutya!`
+                }
+            },
+
+
+            abc : function(){
+                let sorrendtomb = this.etelalergia.sort();
+                return sorrendtomb;
+            },
+        }
+        document.getElementById("asd1").innerHTML = allat.eves("csizma");
+        document.getElementById("asd2").innerHTML = allat.informacio();
+        document.getElementById("asd3").innerHTML = allat.alszik(6);
+        document.getElementById("asd5").innerHTML = allat.kutyae();
+        document.getElementById("asd6").innerHTML = allat.abc();
+    </script>
+</body>
+</html>
